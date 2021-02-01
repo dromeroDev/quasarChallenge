@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Hi Spaceship, </h1>
+<div mat-dialog-content>
+    <p>Complete the message you want to send</p>
+    <form [formGroup]="form" class="example-form">
+        <mat-form-field>
+          <mat-label>Message</mat-label>
+          <input type="message" matInput formControlName="messageFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="form.invalid">
+            Message is required
+          </mat-error>
+        </mat-form-field>
+      </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="sendMessage()" [disabled]="form.invalid">Send</button>
+</div>
+<pre *ngIf="response">
+  Response: 
+  {{response | json}}
+</pre>

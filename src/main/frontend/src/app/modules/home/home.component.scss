@@ -1,0 +1,15 @@
+.img-satellite {
+    width: 200px;
+    height: auto;
+}
+.img-spaceship {
+    width: 400px;
+    height: auto;
+}
+.spaceship {
+    display: flex;
+    flex-direction: column;
+    button {
+        margin-top: 1em;
+    }
+}
